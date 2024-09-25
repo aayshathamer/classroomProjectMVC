@@ -1,0 +1,52 @@
+﻿@model FinalDashboard.Models.BLibrary
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+
+<h2>Add Book</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+    <h4>Books</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        @Html.LabelFor(model => model.Book, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Book, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Book, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Dep)
+        @Html.DropDownListFor(model => model.Dep, new List<SelectListItem>
+{
+       new SelectListItem { Text = "All", Value = "All" },
+    new SelectListItem { Text = "SWE", Value = "SWE" },
+    new SelectListItem { Text = "CS", Value = "CS" },
+    new SelectListItem { Text = "ICT", Value = "ICT" },
+
+    // Add more countries as needed
+}, "Select a Department", new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.Dep, "", new { @class = "text-danger" })
+    </div>
+</div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index2")
+</div>
+

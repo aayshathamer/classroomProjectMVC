@@ -1,0 +1,55 @@
+﻿@model IEnumerable<FinalDashboard.Models.contact>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_dashLayout.cshtml";
+}
+
+
+<h2 class="text text-bg-dark text-center">
+    <p class="fw-bold">Messages</p>
+    <i class="bi bi-person-circle">   </i>
+
+</h2>
+
+<table class="table table-dark table-hover">
+
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.gmail)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.phone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.meaasage)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.gmail)
+            </td>
+            <th>
+                @Html.DisplayNameFor(model => model.phone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.meaasage)
+            </th>
+
+            <td>
+                @Html.ActionLink("Details", "Details", new { id = item.id }) 
+            </td>
+        </tr>
+    }
+
+</table>

@@ -1,0 +1,48 @@
+﻿@model FinalDashboard.Models.contact
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_dashLayout.cshtml";
+}
+
+
+<h2>Details</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.gmail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.gmail)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.phone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.phone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.meaasage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.meaasage)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>

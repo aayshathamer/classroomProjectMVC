@@ -1,0 +1,80 @@
+﻿@model FinalDashboard.Models.student
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/profile.cshtml";
+}
+<h2>list</h2>
+<div class="col-lg-6 pe-lg-5">
+    <div class="w3l-abouthny-img">
+        <img src="~/img/1.jpg" alt="" class="img-fluid radius-image">
+    </div>
+</div>
+<div class="col-lg-6 mt-lg-0 mt-5">
+    <div class="w3l-abouthny-info">
+        <h6 class="title-subw3hny">welcome to my profile</h6>
+        <h3 class="title-w3l">
+            Hi, Iam @Session["name"] and this is my profile
+        </h3>
+        <p class="mt-4">
+            I am @Session["name"] and i study in semester @Session["semester"].
+            currently i am in the @Session["shift"] students
+            the faculty i choose is @Session["dep"]
+
+        </p>
+        <div>
+            <h4>student</h4>
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.name)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.name)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.gmail)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.gmail)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.password)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.password)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.semester)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.semester)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.shift)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.shift)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.dep)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.dep)
+                </dd>
+
+            </dl>
+        </div>
+        <p>
+        </p>
+

@@ -1,0 +1,49 @@
+﻿@model IEnumerable<FinalDashboard.Models.softwaree>
+@{
+    ViewBag.Title = "Index2";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<h2 class="text text-bg-dark text-center">
+    <p class="fw-bold">Course Management</p>
+    <i class="bi bi-person-circle">   </i>
+
+</h2>
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table table-dark table-hover">
+
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.course)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.duration)
+        </th>
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.course)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.duration)
+            </td>
+
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.id })
+            </td>
+        </tr>
+    }
+
+</table>
+

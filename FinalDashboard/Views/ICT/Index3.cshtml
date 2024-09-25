@@ -1,0 +1,42 @@
+﻿@model IEnumerable<FinalDashboard.Models.ictt>
+@{
+    ViewBag.Title = "Index3";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h2 class="text text-bg-dark text-center">
+    <p class="fw-bold">Courses</p>
+    <i class="bi bi-person-circle">   </i>
+
+</h2>
+
+<table class="table table-dark table-hover">
+
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.course)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.duration)
+        </th>
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.course)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.duration)
+            </td>
+
+
+        </tr>
+    }
+
+</table>
