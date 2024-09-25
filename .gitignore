@@ -1,0 +1,23 @@
+# Ignore Visual Studio temporary files, build results, and
+# user-specific files
+.vs/
+bin/
+obj/
+
+# Ignore user-specific files
+*.user
+*.suo
+
+# Ignore NuGet Packages
+packages/
+*.nupkg
+
+# Ignore logs, database, and test results
+*.log
+
+# Ignore compiled source
+*.dll
+*.exe
+
+# Ignore build directories
+project.lock.json
